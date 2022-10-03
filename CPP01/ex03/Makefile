@@ -6,11 +6,11 @@
 #    By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/29 17:24:33 by jbouyer           #+#    #+#              #
-#    Updated: 2022/09/29 17:32:16 by jbouyer          ###   ########.fr        #
+#    Updated: 2022/10/03 16:12:25 by jbouyer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = violence inutile
+NAME = violence_inutile
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp

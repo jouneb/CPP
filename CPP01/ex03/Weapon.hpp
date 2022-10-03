@@ -6,17 +6,25 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 17:33:04 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/09/29 17:39:55 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/10/03 17:26:38 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
+
+#include <iostream>
+#include <string>
 
 class Weapon
 {
 	private :
 			std::string _type; 
 	public:
-			Weapon();
+			Weapon(std::string type);
 			~Weapon();
-			std::string	getType(std::string type);
-			std::string	setType(std::sttring type);
+			const std::string& getType() const;
+			void	setType(std::string type);
 };
+
+#endif
