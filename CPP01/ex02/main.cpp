@@ -6,7 +6,7 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 17:00:17 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/09/29 17:11:40 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/10/03 16:36:46 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 int main()
 {
-	std::string str;
+	std::string 	str;
 
 	str = "HI THIS IS THE BRAIN";
 
-	std::string*	strPTR = &str;
+	std::string		*strPTR = &str;
 
-	std::string&	strREF = str;
+	std::string		&strREF = str;
 
 	std::cout << "Memory address of string:           " << &str << std::endl;
 	std::cout << "Memory address held by stringPTR:   " << strPTR << std::endl;
