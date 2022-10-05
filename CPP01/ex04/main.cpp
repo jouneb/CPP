@@ -6,11 +6,10 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 13:07:38 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/10/04 18:26:11 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/10/05 15:38:43 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//deja essayer d'ouvrir un fichier et de le mettre dans un autre fichier.
 
 #include <iostream>
 #include <fstream>
@@ -19,12 +18,13 @@
 
 void replace_str(std::string &str, std::string s1, std::string s2)
 {
-	size_t pos = 0;
-	size_t	found = 0;
-	while(found < str.size())
+	std::size_t pos = 0;
+	std::size_t	found;
+
+	while (str.find(s1, pos) != std::string::npos)
 	{
-		size_t	found = str.find(s1, pos);
-		str.erase(found, s2.size());
+		found = str.find(s1, pos);
+		str.erase(found, s1.size());
 		str.insert(found, s2);
 		pos = found + s2.size();
 	}
@@ -32,17 +32,31 @@ void replace_str(std::string &str, std::string s1, std::string s2)
 
 int main(int argc, char **argv)
 {
-	std::ifstream	ifs(argv[1]);
+	if (argc != 4)
+	{
+		std::cout<< "Invalid args" << std::endl;
+		return (1);
+	}	
+	std::string infile = argv[1];
+	std::string	outfile = infile + ".replace";
+	std::ifstream	ifs(infile.c_str());
+	if	(ifs.is_open() == false)
+	{
+		std::cout << "Error file" << std::endl;
+		return (1);
+	}	
 	std::string			s;
-	// std::ofstream	ofs("test.replace");
-
-	// ifs.open("testfile", ios::in);
-	std::getline(ifs,s);
-	// s >> test;
-	std::cout << s << std::endl;
-	replace_str(s, argv[2], argv[3]);
-	// std::cout << s << std::endl;
-	// ofs << s << std::endl;
-	// ofs.close();
+	std::ofstream	ofs(outfile.c_str());
+	while(!ifs.eof())
+	{
+		std::getline(ifs,s);
+		replace_str(s, argv[2], argv[3]);
+		ofs << s;
+		if (!ifs.eof())
+		{
+			ofs << std::endl;
+		}
+	}
+	ofs.close();
 	ifs.close();
 }
