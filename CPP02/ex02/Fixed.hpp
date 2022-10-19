@@ -6,7 +6,7 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 15:56:54 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/10/18 16:40:21 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/10/19 12:10:23 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ class Fixed
 
 			Fixed& 	operator++(); //pre incrementation
 			Fixed	operator++(int); //post incrementation
-			Fixed&	operator--(); //predecrementation
+			Fixed&	operator--(); //pre decrementation
 			Fixed	operator--(int);
 		
 	//Static functions
