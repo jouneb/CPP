@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/21 16:14:04 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/10/25 17:00:57 by jbouyer          ###   ########.fr       */
+/*   Created: 2022/10/25 17:12:11 by jbouyer           #+#    #+#             */
+/*   Updated: 2022/10/25 17:33:54 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
+
 #include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
 
-int main()
+class FragTrap : public ClapTrap
 {
-	ScavTrap 		Bob = ScavTrap("Bob");
-	ScavTrap		Bernard = ScavTrap("Bernard");
+	private : 
 
-	Bob.attack("Bernard");
-	Bernard.takeDamage(2);
-	Bernard.attack("Bob");
-	Bernard.guardGate();
-	Bernard.takeDamage(20);
-	Bob.beRepaired(2);
-	Bernard.beRepaired(5);
-}
+	public : 
+			FragTrap();
+			FragTrap(std::string name);
+			~FragTrap();
+			FragTrap(FragTrap const &copy);
+			FragTrap&	operator=(FragTrap const &copy);
+			void highFivesGuys(void);
+};
+
+#endif
