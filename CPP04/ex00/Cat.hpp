@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 13:58:35 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/10/25 12:22:55 by jbouyer          ###   ########.fr       */
+/*   Created: 2022/10/27 16:55:48 by jbouyer           #+#    #+#             */
+/*   Updated: 2022/10/27 17:00:44 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
 
-int main()
+#include "Animal.hpp"
+
+class Cat : public Animal
 {
-	Zombie *Zombie;
+	private:
+	protected:
+	public:
+			Cat();
+			Cat(Cat& const &copy);
+			~Cat();
+			Cat& operator=(Cat const &rhs);
+			void	makeSound();
 
-	Zombie = newZombie("Zo-leZOmbie");
-	Zombe.announce();
-	randomChump("Foo");
-	delete Zombie;
-	return (0);
-}
+};
+#endif

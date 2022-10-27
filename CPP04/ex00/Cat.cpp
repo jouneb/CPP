@@ -1,24 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 13:58:35 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/10/25 12:22:55 by jbouyer          ###   ########.fr       */
+/*   Created: 2022/10/27 17:00:58 by jbouyer           #+#    #+#             */
+/*   Updated: 2022/10/27 17:10:08 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Cat.hpp"
 
-int main()
+Cat::Cat()
 {
-	Zombie *Zombie;
+	std::cout<<"Cat constructor Called"<<std::endl;
+	return;
+}
 
-	Zombie = newZombie("Zo-leZOmbie");
-	Zombe.announce();
-	randomChump("Foo");
-	delete Zombie;
-	return (0);
+Cat::Cat(Cat const &copy)
+{
+	std::cout<<"Cat copy constructor Called"<<std::endl;
+	*this = copy;
+	return;
+}
+
+Cat::~Cat()
+{
+	std::cout<<"Cat Destructor Called"<<std::endl;
+	return;
+}
+
+Cat&	Cat::operator=(Cat const &rhs)
+{
+	*this = rhs;
+	return *this;
 }

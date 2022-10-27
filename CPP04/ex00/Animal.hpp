@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 13:58:35 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/10/25 12:22:55 by jbouyer          ###   ########.fr       */
+/*   Created: 2022/10/26 17:47:05 by jbouyer           #+#    #+#             */
+/*   Updated: 2022/10/26 17:58:07 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
-int main()
+#include <iostream>
+#include <string>
+
+class Animal
 {
-	Zombie *Zombie;
+	private:
+	protected:
+			std::string	type;
+	public:	
+			Animal();
+			Animal(Animal const &copy);
+			~Animal();
+			Animal& operator=(Animal const &rhs);
+			makeSound(std::string sound);
+};
 
-	Zombie = newZombie("Zo-leZOmbie");
-	Zombe.announce();
-	randomChump("Foo");
-	delete Zombie;
-	return (0);
-}
+#endif
