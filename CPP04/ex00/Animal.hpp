@@ -20,13 +20,14 @@ class Animal
 {
 	private:
 	protected:
-			std::string	type;
+			std::string	_type;
 	public:	
 			Animal();
 			Animal(Animal const &copy);
 			~Animal();
 			Animal& operator=(Animal const &rhs);
-			makeSound(std::string sound);
+			virtual void makeSound();
+            std::string     getType();
 };
 
 #endif

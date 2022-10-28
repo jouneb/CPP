@@ -12,7 +12,7 @@
 
 #include "Cat.hpp"
 
-Cat::Cat()
+Cat::Cat() : _type("Cat")
 {
 	std::cout<<"Cat constructor Called"<<std::endl;
 	return;
@@ -35,4 +35,14 @@ Cat&	Cat::operator=(Cat const &rhs)
 {
 	*this = rhs;
 	return *this;
+}
+
+void	Cat::makeSound()
+{
+	std::cout<<"My Sound is :" << this->_type<<std::endl;
+}
+
+const std::string		Cat::getType()
+{
+	return(this->_type);
 }

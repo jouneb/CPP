@@ -18,13 +18,15 @@
 class Cat : public Animal
 {
 	private:
+			std::string		_type;
 	protected:
 	public:
 			Cat();
-			Cat(Cat& const &copy);
+			Cat(Cat const &copy);
 			~Cat();
 			Cat& operator=(Cat const &rhs);
-			void	makeSound();
+            std::string     getType();
+			virtual void	makeSound();
 
 };
 #endif

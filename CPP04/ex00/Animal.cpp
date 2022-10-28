@@ -35,7 +35,17 @@ Animal& Animal::operator=(Animal const &rhs)
 {
 	if ( this != &rhs)
 	{
-		this->type = rhs.type;
+		this->_type = rhs._type;
 	}
 	return *this;
+}
+
+void	Animal::makeSound()
+{
+	std::cout<<"Animal Sound"<<std::endl;
+}
+
+const std::string		Animal::getType()
+{
+	return(this->_type);
 }

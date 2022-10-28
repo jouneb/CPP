@@ -1,36 +1,48 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/27 17:00:58 by jbouyer           #+#    #+#             */
+/*   Updated: 2022/10/27 17:10:08 by jbouyer          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-# include <iostream>
+#include "Dog.hpp"
 
-class Animal
+Dog::Dog() : _type("Dog")
 {
-	public :
-	virtual void announce();
-};
-
-
-class Dog : public Animal
-{
-	public :
-	virtual void announce();
-};
-
-void 	Animal::announce()
-{
-	std::cout << "salut je suis l'Animal"<<std::endl;
+	std::cout<<"Dog constructor Called"<<std::endl;
 	return;
 }
 
-void 	Dog::announce()
+Dog::Dog(Dog const &copy)
 {
-	std::cout << "Salut je suis le Chien" << std::endl;
+	std::cout<<"Dog copy constructor Called"<<std::endl;
+	*this = copy;
 	return;
 }
 
-int main()
+Dog::~Dog()
 {
-	Dog Bernard = Dog();
-	Animal Lol = Bernard;
-	Bernard.announce();
-	Lol.announce();
-	return(0);
+	std::cout<<"Dog Destructor Called"<<std::endl;
+	return;
+}
+
+Dog&	Dog::operator=(Dog const &rhs)
+{
+	*this = rhs;
+	return *this;
+}
+
+void	Dog::makeSound()
+{
+	std::cout<<"My Sound is :" << this->_type<<std::endl;
+}
+
+std::string		Dog::getType()
+{
+	return(this->_type);
 }
