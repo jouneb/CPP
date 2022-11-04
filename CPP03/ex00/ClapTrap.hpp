@@ -6,7 +6,7 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 14:27:52 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/10/21 16:38:14 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/11/03 17:44:52 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class ClapTrap
 			int			_AttackDamage;
 			ClapTrap();
 	public :
-			;
 			ClapTrap(std::string name);
 			ClapTrap(ClapTrap const &copy);
 			ClapTrap& operator=(ClapTrap const &ClapTrap);

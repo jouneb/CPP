@@ -1,46 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 17:00:58 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/11/04 14:32:49 by jbouyer          ###   ########.fr       */
+/*   Created: 2022/11/04 11:19:19 by jbouyer           #+#    #+#             */
+/*   Updated: 2022/11/04 14:32:42 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat")
+#include "Dog.hpp"
+
+Dog::Dog() : Animal("Dog")
 {
-	std::cout<<"Cat constructor Called"<<std::endl;
+	std::cout<<"Dog constructor Called"<<std::endl;
 	return;
 }
 
-Cat::Cat(Cat const &copy) : Animal(copy)
+Dog::Dog(Dog const &copy) : Animal(copy)
 {
-	std::cout<<"Cat copy constructor Called"<<std::endl;
+	std::cout<<"Dog copy constructor Called"<<std::endl;
 	return;
 }
 
-Cat::~Cat()
+Dog::~Dog()
 {
-	std::cout<<"Cat Destructor Called"<<std::endl;
+	std::cout<<"Dog Destructor Called"<<std::endl;
 	return;
 }
 
-Cat&	Cat::operator=(Cat const &rhs)
+Dog&	Dog::operator=(Dog const &rhs)
 {
-	std::cout<<"Cat copy assignment operator called"<<std::endl;
 	if (this != &rhs)
 	{
 		Animal::operator=(rhs);
+		// this->_type = rhs._type;
 	}
 	return *this;
 }
 
-void	Cat::makeSound() const
+void	Dog::makeSound() const
 {
-	std::cout<<"My Sound is : Miaou" <<std::endl;
+	std::cout<<"My Sound is : WAf WAF" <<std::endl;
 }
