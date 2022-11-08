@@ -7,29 +7,49 @@
 int main()
 {
 const Animal* meta = new Animal();
-const Animal* j = new Dog();
-const Animal* i = new Cat();
-WrongAnimal	Bob = WrongAnimal();
-Cat 	Bernard = Cat();
-Animal *Bernarde = &Bernard;
-Dog	Bis = Dog();
-WrongCat Tom = WrongCat();
-std::cout << j->getType() << " " << std::endl;
-std::cout << i->getType() << " " << std::endl;
-std::cout << Bob.getType() << " " << std::endl;
-std::cout << Tom.getType() << " " << std::endl;
-std::cout<<"Bernard's sound : ";
-Bernard.makeSound();
-std::cout<<"Bernarde's sound : ";
-Bernarde->makeSound();
-std::cout<<"Bis's sound : ";
-Bis.makeSound();
-i->makeSound(); //will output the cat sound!
-j->makeSound();
+std::cout<<std::endl;
+const Animal* DOg = new Dog();
+std::cout<<std::endl;
+const Animal* CAt = new Cat();
+std::cout<<std::endl;
+// WrongAnimal	Bob = WrongAnimal();
+// std::cout<<std::endl;
+// Cat 	Bernard = Cat();
+// std::cout<<std::endl;
+// Cat Bernarde = Bernard;
+// std::cout<<std::endl;
+// Dog	Bis = Dog();
+// std::cout<<std::endl;
+// WrongCat Tom = WrongCat();
+std::cout<<std::endl;
+std::cout << DOg->getType() << " " << std::endl;
+std::cout << CAt->getType() << " " << std::endl;
+std::cout << meta->getType() << " " << std::endl;
+// std::cout << Bob.getType() << " " << std::endl;
+// std::cout << Tom.getType() << " " << std::endl;
+std::cout<<std::endl;
+// std::cout<<"Bernard's sound : ";
+// Bernard.makeSound();
+// std::cout<<"Bernarde's sound : ";
+// Bernarde.makeSound();
+// std::cout<<"Bis's sound : ";
+// Bis.makeSound();
+std::cout<<"Cat's sound : ";
+CAt->makeSound(); //will output the cat sound!
+std::cout<<"DOg's sound : ";
+DOg->makeSound();
+std::cout<<"meta's sound : ";
 meta->makeSound();
-Bob.makeSound();
+std::cout<<std::endl;
+// std::cout<<"Bob's sound : ";
+// Bob.makeSound();
 delete meta;
-delete j;
-delete i;
+delete DOg;
+delete CAt;
+
+WrongAnimal* wcat = new WrongCat();
+wcat->makeSound();	
+delete wcat;
+
 return 0;
 }

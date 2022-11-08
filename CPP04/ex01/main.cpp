@@ -1,35 +1,48 @@
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+
 
 int main()
 {
-const Animal* meta = new Animal();
-const Animal* j = new Dog();
-const Animal* i = new Cat();
-WrongAnimal	Bob = WrongAnimal();
-Cat 	Bernard = Cat();
-Animal *Bernarde = &Bernard;
-Dog	Bis = Dog();
-WrongCat Tom = WrongCat();
-std::cout << j->getType() << " " << std::endl;
-std::cout << i->getType() << " " << std::endl;
-std::cout << Bob.getType() << " " << std::endl;
-std::cout << Tom.getType() << " " << std::endl;
-std::cout<<"Bernard's sound : ";
-Bernard.makeSound();
-std::cout<<"Bernarde's sound : ";
-Bernarde->makeSound();
-std::cout<<"Bis's sound : ";
-Bis.makeSound();
-i->makeSound(); //will output the cat sound!
-j->makeSound();
-meta->makeSound();
-Bob.makeSound();
-delete meta;
-delete j;
-delete i;
+	// Animal*	animal[4];
+
+	// animal[0] = new Dog();
+	// std::cout << std::endl;
+	// animal[1] = new Dog();
+	// std::cout << std::endl;
+	// animal[2] = new Cat();
+	// std::cout << std::endl;
+	// animal[3] = new Cat();
+	// std::cout << std::endl;
+
+	// for (int i = 0; i < 4; i++)
+	// {
+	// 	animal[i]->makeSound();
+	// 	std::cout << std::endl;	
+	// 	std::cout << std::endl;
+	// }
+	// Animal*	doggy = new Dog();
+	// Animal* miou = new Cat();
+
+	// *doggy = *animal[1];
+	// *miou = *animal[3];
+
+	// for (int i = 0; i < 4; i++)
+	// 	delete animal[i];
+	// delete doggy;
+	// delete miou;
+
+	Dog Lol = Dog();
+	Dog Mdr = Lol;
+
+	Lol.GetBrain()->SetIdeas("Manger", 0);
+	std::cout<<Lol.GetBrain()->GetIdeas(0)<<std::endl;
+	std::cout<<Mdr.GetBrain()->GetIdeas(0)<<std::endl;
+
+	Dog xd = Lol;
+	std::cout<<xd.GetBrain()->GetIdeas(0)<<std::endl;
+	
+
 return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 17:47:05 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/11/04 14:30:33 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/11/08 14:33:10 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ class Animal
 			Animal(Animal const &copy);
 			virtual ~Animal();
 			Animal& operator=(Animal const &rhs);
-			virtual void makeSound() const;
-            std::string     getType() const;
+			virtual void 		makeSound() const;
+			std::string			getType() const;
 };
 
 #endif

@@ -6,22 +6,27 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 14:46:37 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/11/04 15:05:56 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/11/08 14:45:07 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BRAIN_HPP
 # define BRAIN_HPP
 
+#include <iostream>
+#include <string>
+
 class Brain
 {
 	private : 
-				std::string		ideas[100];
+				std::string		_ideas[100];
 	public :
 			Brain();
 			Brain(Brain const &copy);
 			~Brain();
 			Brain& operator=(Brain const &rhs);
+			void			SetIdeas(std::string ideas, int const nb);
+			std::string		GetIdeas(int const nb) const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 11:52:26 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/11/04 14:27:18 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/11/08 14:40:52 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ class WrongAnimal
 			WrongAnimal();
 			WrongAnimal(std::string const &type);
 			WrongAnimal(WrongAnimal const &copy);
-			virtual ~WrongAnimal();
+			~WrongAnimal();
 			WrongAnimal& operator=(WrongAnimal const &rhs);
-			virtual void makeSound()const;
+			void makeSound()const;
 			std::string		getType() const;
 };
 
