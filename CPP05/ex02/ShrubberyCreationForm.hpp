@@ -1,39 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 15:37:03 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/11/08 17:28:00 by jbouyer          ###   ########.fr       */
+/*   Created: 2022/11/09 17:49:38 by jbouyer           #+#    #+#             */
+/*   Updated: 2022/11/09 18:06:03 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRT_HPP
-# define BUREAUCRAT_HPP
+#ifndef SHRUBBERYCREATIONFORM_HPP
+#define	SHRUBBERYCREATIONFORM_HPP
 
 #include <iostream>
 #include <string>
+#include "Form.hpp"
 
-class Bureaucrat
+class ShrubberyCreationForm : public Form
 {
-	private :
-			std::string _name;
-			int			_grade;
-	protected:
-	public:
-			Bureaucrat();
-			Bureaucrat(Bureaucrat& const copy);
-			Bureaucrat& operator=(Bureaucrat& const rhs)
-			~Bureaucrat();
-
-			std::string& const getName() const;
-			int	 getGrade() const;
-
-			void	upGrade();
-			void	downGrade();
+	publi
 };
-
 
 #endif
