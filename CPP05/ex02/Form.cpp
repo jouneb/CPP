@@ -6,7 +6,7 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:14:37 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/11/09 17:13:20 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/11/10 17:07:03 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,15 @@
 			this->_isSigned = true;
 	}
 
+	void    Form::execute(const Bureaucrat& executor) const
+	{
+		if (this->_signed == false)
+			throw (Form::NotSignedException());
+		if (executor.getGrade() > this->_gradeExec)
+			throw (Form::GradeTooLowException());
+		this->_execute();
+	}
+	
 	std::ostream& operator<<(std::ostream& o, Form const &Form)
 	{
 		o << "Formulaire : "<<Form.getName()<<". Deja signe ? "<<Form.getbool()<<". Combien pour signer ?" << Form.getTosign() << ". Combien pour executer ?"<<Form.getToexecute()<<std::endl;

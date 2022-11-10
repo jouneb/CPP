@@ -6,7 +6,7 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:47:48 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/11/09 18:06:02 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/11/10 17:07:00 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <string>
 #include "Bureaucrat.hpp"
 
+
 class Bureaucrat;
 
 class Form
@@ -26,7 +27,9 @@ class Form
 			bool			_isSigned;
 			int				_toSign;
 			int				_toExecute;
+	protected:
 			Form();
+			virtual void	_execute() const = 0;
 
 	public :
 			Form(std::string name, int tosign, int toexecute);
@@ -40,7 +43,7 @@ class Form
 			int			getToexecute() const;
 
 			void	beSigned(Bureaucrat const &Bureaucrat);
-			void	execute(Bureaucrat const &executor) = 0;
+			virtual void	execute(Bureaucrat const &executor) const;
 			
 			class	GradeTooHighException : public std::exception
 			{

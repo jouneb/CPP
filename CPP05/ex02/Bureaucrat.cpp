@@ -6,7 +6,7 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:37:06 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/11/09 17:23:14 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/11/10 16:28:06 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,19 @@ void	Bureaucrat::signForm(Form &Form)
 		std::cout<<this->_name<<" couldn't signed " << Form.getName() << " because Grade too low " <<std::endl;
 }
 
+void	executeForm(const Form& form) const;
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->_name << " executed " << form.getName() << std::endl;
+	}
+	catch (std::exception& e)
+	{
+		std::cout	<< this->_name << " couldn't execute "
+					<< form.getName() << " because " << e.what() << std::endl;
+	}
+}
 
 std::ostream& operator<<(std::ostream& os, Bureaucrat const &rhs)
 {

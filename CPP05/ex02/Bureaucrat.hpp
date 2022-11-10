@@ -6,7 +6,7 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:37:03 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/11/09 17:23:13 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/11/10 16:16:21 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,14 @@ class Bureaucrat
 			void	downGrade();
 
 			void	signForm(Form  &Form);
+			void	executeForm(const Form& form) const;
 			
 			class	GradeTooHighException : public std::exception
 			{
 				public : 
 						virtual const char* what() const throw()
 						{
-							return("Pschiiit il ne fallait pas essayer d'aller plus haut que le maximum...");
+							return("Grade deja trop haut.");
 						}
 			};
 			
@@ -54,7 +55,15 @@ class Bureaucrat
 				public : 
 						virtual const char* what() const throw()
 						{
-							return("Dommage plus bas que ca c'est la porte, vous etes vire.");
+							return("Grade trop bas.");
+						}
+			};
+			class	NotSignedException : public std::exception
+			{
+				public : 
+						virtual const char* what() const throw()
+						{
+							return("Pas signe.");
 						}
 			};
 };
