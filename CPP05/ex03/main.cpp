@@ -6,7 +6,7 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:36:51 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/11/14 15:19:59 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/11/14 17:30:07 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,28 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
 	try
 	{
 		Bureaucrat Kevin = Bureaucrat("Kevin", 2);
-		ShrubberyCreationForm	test = ShrubberyCreationForm("Jardin");
-		RobotomyRequestForm		Robotommy = RobotomyRequestForm("Bernard");
-		PresidentialPardonForm	Peace = PresidentialPardonForm("Michel");
-		Kevin.signForm(test);
-		Kevin.executeForm(test);
-		Kevin.signForm(Robotommy);
-		Kevin.executeForm(Robotommy);
-		Kevin.signForm(Peace);
-		Kevin.executeForm(Peace);
+		// ShrubberyCreationForm	test = ShrubberyCreationForm("Jardin");
+		// RobotomyRequestForm		Robotommy = RobotomyRequestForm("Bernard");
+		// PresidentialPardonForm	Peace = PresidentialPardonForm("Michel");
+		Intern randomIntern;
+		Form* test;
+		test = randomIntern.makeForm("robotomy request","lol");
+		test = randomIntern.makeForm("presidential pardon","lol");
+		test = randomIntern.makeForm("shrubbery creation","lol");
+		(void) test;
+		// Kevin.signForm(test);
+		// Kevin.executeForm(test);
+		// Kevin.signForm(Robotommy);
+		// Kevin.executeForm(Robotommy);
+		// Kevin.signForm(Peace);
+		// Kevin.executeForm(Peace);
 		// // Formtest.beSigned(Kevin);
 		std::cout<<Kevin;
 	}
