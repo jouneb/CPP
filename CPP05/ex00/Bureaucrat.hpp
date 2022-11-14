@@ -6,7 +6,7 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:37:03 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/11/09 14:48:54 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/11/14 17:39:04 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class Bureaucrat
 				public : 
 						virtual const char* what() const throw()
 						{
-							return("Pschiiit il ne fallait pas essayer d'aller plus haut que le maximum...");
+							return("Il ne faut pas essayer d'aller plus haut que le maximum...");
 						}
 			};
 			

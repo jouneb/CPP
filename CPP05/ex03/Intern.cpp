@@ -6,7 +6,7 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:49:11 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/11/14 17:26:07 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/11/14 17:43:08 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,6 @@ Form*	Intern::makeForm(std::string const &name, std::string const &target)
 	Form* form;
 	std::string	Formtype[3] = {"presidential pardon", "robotomy request", "shruberry creation"};
 	Form* (Intern::*fctPtr[3])(std::string const &target);
-	// Form* (Intern::*fctPtr[0])(std::string const &target) = &Intern::presidential;
-	// Form* (Intern::*fctPtr[1])(std::string const &target) = &Intern::robotomy;
-	// Form* (Intern::*fctPtr[2])(std::string const &target) = &Intern::shrubbery;
 	fctPtr[0] = &Intern::presidential;
 	fctPtr[1] = &Intern::robotomy;
 	fctPtr[2] = &Intern::shrubbery;
@@ -68,7 +65,7 @@ Form*	Intern::makeForm(std::string const &name, std::string const &target)
 		if (Formtype[i] == name)
 		{
 			form = (this->*fctPtr[i])(target);
-			std::cout << "Intern created " << name << std::endl;
+			std::cout << "Intern a cree le formulaire : " << name << std::endl;
 			return (form);
 		}
 		i++;

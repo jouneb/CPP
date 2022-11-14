@@ -6,7 +6,7 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:14:37 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/11/14 14:59:35 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/11/14 17:43:58 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 		
 		if (this->_toSign < 1 || this->_toExecute < 1)
 			throw GradeTooHighException();
-		std::cout<<"form created !"<<std::endl;
+		std::cout<<"form cree !"<<std::endl;
 		return;
 	}
 
