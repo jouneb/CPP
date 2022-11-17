@@ -6,7 +6,7 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:36:51 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/11/09 15:03:36 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/11/17 10:36:55 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int main()
 	{
 		Bureaucrat Kevin = Bureaucrat("Kevin", 10);
 		Kevin.upGrade();
+		std::cout<<Kevin;
+		Kevin.downGrade();
 		std::cout<<Kevin;
 	}
 	catch (std::exception & e)

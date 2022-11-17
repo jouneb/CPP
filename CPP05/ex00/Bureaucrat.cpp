@@ -6,7 +6,7 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:37:06 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/11/09 15:01:18 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/11/15 11:14:45 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,13 @@ Bureaucrat& Bureaucrat::operator=(Bureaucrat const &rhs)
 {
 	if (this != &rhs)
 	{
-		this->_name = rhs._name;
-		this->_grade = rhs._grade;
+		this->_grade = rhs.getGrade();
 	}
 	return *this;
 }
 
 
-std::string	 Bureaucrat::getName() const
+std::string const&	 Bureaucrat::getName() const
 {
 	return(this->_name);
 }

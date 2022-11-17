@@ -6,7 +6,7 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:36:51 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/11/14 17:43:46 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/11/17 11:39:39 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ int main()
 		Form* test;
 		test = randomIntern.makeForm("robotomy request","lol");
 		test = randomIntern.makeForm("presidential pardon","lol");
-		test = randomIntern.makeForm("shrubbery creation","lol");
+		test = randomIntern.makeForm("shruberry creation","lol");
+		test = randomIntern.makeForm("shrubbe","lol");
 		(void) test;
 		// Kevin.signForm(test);
 		// Kevin.executeForm(test);

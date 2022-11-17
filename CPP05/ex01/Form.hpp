@@ -6,7 +6,7 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:47:48 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/11/09 17:11:03 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/11/17 10:43:23 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ class Bureaucrat;
 class Form
 {
 	private:
-			std::string		_name;
-			bool			_isSigned;
-			int				_toSign;
-			int				_toExecute;
+			std::string	const	_name;
+			bool				_isSigned;
+			int	const			_toSign;
+			int	const			_toExecute;
 			Form();
 
 	public :
@@ -46,7 +46,7 @@ class Form
 				public : 
 						virtual const char* what() const throw()
 						{
-							return("Grade deja trop haut...");
+							return("Grade trop haut...");
 						}
 			};
 			

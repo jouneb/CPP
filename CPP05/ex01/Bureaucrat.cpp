@@ -6,7 +6,7 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:37:06 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/11/09 17:23:14 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/11/17 10:59:47 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ Bureaucrat& Bureaucrat::operator=(Bureaucrat const &rhs)
 {
 	if (this != &rhs)
 	{
-		this->_name = rhs._name;
 		this->_grade = rhs._grade;
 	}
 	return *this;
@@ -76,14 +75,17 @@ void	Bureaucrat::downGrade()
 }
 
 void	Bureaucrat::signForm(Form &Form)
-{
-	if (Form.getTosign() >= this->_grade)
+{	
+	if (Form.getbool() == true)
+		std::cout<<"Form already Signed"<<std::endl;
+	else if (Form.getTosign() >= this->_grade)
 	{
 		Form.beSigned(*this);
 		std::cout<<this->_name<<" signed " << Form.getName() <<std::endl;
 	}
-	if (Form.getTosign() < this->_grade)
+	else if (Form.getTosign() < this->_grade)
 		std::cout<<this->_name<<" couldn't signed " << Form.getName() << " because Grade too low " <<std::endl;
+	
 }
 
 

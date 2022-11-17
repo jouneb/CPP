@@ -6,7 +6,7 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:14:37 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/11/09 17:13:20 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/11/15 13:55:51 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,17 @@
 		return;
 	}
 
-	Form::Form(Form const &copy)
+	Form::Form(Form const &copy) : _name(copy.getName()), _toSign(copy.getTosign()), _toExecute(copy.getToexecute())
 	{
 		*this = copy;
+		return;
 	}
 
 	Form&	Form::operator=(Form const &rhs)
 	{
 		if (this != &rhs)
-		{
-			this->_name = rhs._name;
+		{		
 			this->_isSigned = rhs._isSigned;
-			this->_toSign = rhs._toSign;
-			this->_toExecute = rhs._toExecute;
 		}
 		return *this;
 	}

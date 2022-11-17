@@ -6,7 +6,7 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:37:03 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/11/09 17:23:13 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/11/17 11:00:36 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Form;
 class Bureaucrat
 {
 	private :
-			std::string _name;
+			std::string const _name;
 			int			_grade;
 			Bureaucrat();
 	protected:
@@ -45,7 +45,7 @@ class Bureaucrat
 				public : 
 						virtual const char* what() const throw()
 						{
-							return("Pschiiit il ne fallait pas essayer d'aller plus haut que le maximum...");
+							return("grade trop haut");
 						}
 			};
 			
@@ -54,7 +54,7 @@ class Bureaucrat
 				public : 
 						virtual const char* what() const throw()
 						{
-							return("Dommage plus bas que ca c'est la porte, vous etes vire.");
+							return("Grade trop bas.");
 						}
 			};
 };

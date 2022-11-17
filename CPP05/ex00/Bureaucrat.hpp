@@ -6,11 +6,11 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:37:03 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/11/14 17:39:04 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/11/15 15:16:13 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRT_HPP
+#ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
 #include <iostream>
@@ -19,18 +19,17 @@
 class Bureaucrat
 {
 	private :
-			std::string _name;
-			int			_grade;
+			std::string const	_name;
+			int					_grade;
 			Bureaucrat();
-	protected:
 	public:
 			Bureaucrat(std::string name, int grade);
 			Bureaucrat(Bureaucrat const &copy);
 			Bureaucrat& operator=(Bureaucrat const &rhs);
 			~Bureaucrat();
 
-			std::string	getName() const;
-			int	 getGrade() const;
+			std::string const&	getName() const;
+			int					getGrade() const;
 
 			void	upGrade();
 			void	downGrade();
@@ -40,7 +39,7 @@ class Bureaucrat
 				public : 
 						virtual const char* what() const throw()
 						{
-							return("Il ne faut pas essayer d'aller plus haut que le maximum...");
+							return("Grade trop haut.");
 						}
 			};
 			
@@ -49,7 +48,7 @@ class Bureaucrat
 				public : 
 						virtual const char* what() const throw()
 						{
-							return("Dommage plus bas que ca c'est la porte, vous etes vire.");
+							return("Grade trop bas.");
 						}
 			};
 };
