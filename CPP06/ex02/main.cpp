@@ -6,7 +6,7 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 13:01:18 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/11/18 17:18:45 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/11/18 18:04:14 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ void	identify(Base& p)
 {
 	try
 	{
-		A* a = dynamic_cast<A*>(p);
 		A& a = dynamic_cast<A&>(p);
 		(void) a;
 		std::cout << "The refp type is A!" << std::endl;
