@@ -6,15 +6,15 @@
 #    By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 15:50:11 by jbouyer           #+#    #+#              #
-#    Updated: 2022/11/15 16:02:50 by jbouyer          ###   ########.fr        #
+#    Updated: 2022/11/18 12:29:11 by jbouyer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Conversion
 
 FLAGS = -Wall -Wextra -Werror -std=c++98 -g
-SRC = main.cpp Conversion.cpp
-HEADER = Conversion.hpp
+SRC = main.cpp 
+HEADER = 
 OBJ	=	${SRC:.cpp=.o}
 
 all: $(NAME)
