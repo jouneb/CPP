@@ -6,7 +6,7 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 16:52:24 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/11/21 17:09:39 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/11/22 16:41:29 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,22 +29,44 @@ void	show_it(T &tableau)
 	return ;
 }
 
+// int main()
+// {
+// 	{
+// 		int	mon_tab[5] = {0, 1, 2, 3, 4};
+
+// 		iter(mon_tab, 5, &(show_it));
+// 		iter(mon_tab, 5, &(increment));
+// 		iter(mon_tab, 5, &(show_it));
+// 		std::cout << std::endl;
+// 	}
+// 	{
+// 		char	mon_tab[3] = {'a', 'b', 'c'};
+
+// 		iter(mon_tab, 3, &(show_it));
+// 		iter(mon_tab, 3, &(changeletter));
+// 		iter(mon_tab, 3, &(show_it));
+// 		std::cout << std::endl;
+// 	}
+// }
+
+class Awesome
+{
+	public:
+	Awesome(void):_n(42){return;}
+	int get(void) const {return this->_n;}
+	private:
+	int _n;
+};
+std::ostream & operator<<(std::ostream & o, Awesome const & rhs) {o <<rhs.get(); return o;}
+template <typename T>
+void print(T const &x){std::cout<<x<<std::endl;return;}
 int main()
 {
-	{
-		int	mon_tab[5] = {0, 1, 2, 3, 4};
+	int tab[]={0, 1, 2, 3, 4};
+	Awesome tab2[5];
 
-		iter<int>(mon_tab, 5, &(show_it<int>));
-		iter<int>(mon_tab, 5, &(increment<int>));
-		iter<int>(mon_tab, 5, &(show_it<int>));
-		std::cout << std::endl;
-	}
-	{
-		char	mon_tab[3] = {'a', 'b', 'c'};
-
-		iter<char>(mon_tab, 3, &(show_it<char>));
-		iter<char>(mon_tab, 3, &(changeletter<char>));
-		iter<char>(mon_tab, 3, &(show_it<char>));
-		std::cout << std::endl;
-	}
+	iter(tab, 5, print);
+	iter(tab2, 5, print);
+	return(0);
 }
+
