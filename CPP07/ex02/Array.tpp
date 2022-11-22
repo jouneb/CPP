@@ -6,16 +6,16 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:23:14 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/11/21 18:28:34 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/11/22 11:58:19 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
 
 template<typename T>
-Array<T>::Array() : _array(NULL)
+Array<T>::Array() : _array(NULL), _size(0)
 {
-
+	return;
 }
 
 template<typename T>
@@ -37,16 +37,13 @@ Array<T>::~Array()
 }
 
 template<typename T>
-Array<T>::Array(Array const& copy)
+Array<T>::Array(Array<T> &copy):_array(new T[0]),_size(0)
 {
-	if (*this != copy)
-	{
 		*this = copy;
-	}
 }
 
 template<typename T>
-Array<T>& Array<T>::operator=(Array const &rhs)
+Array<T>& Array<T>::operator=(Array<T> const &rhs)
 {
 	int i = 0;
 
@@ -78,3 +75,4 @@ T&	Array<T>::operator[](int n)
 	else
 		return(this->_array[n]);
 }
+

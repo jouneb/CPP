@@ -6,7 +6,7 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 17:18:50 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/11/21 18:27:51 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/11/22 11:58:09 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@ template<typename T>
 class	Array
 {
 	private:
-		T*			_array;
-		int _size;
+		T*		_array;
+		int 	_size;
 
 	public :
 			Array();
 			~Array();
 			Array(int n);
-			Array(Array const& copy);
+			Array(Array &copy);
 			Array& operator=(Array const &rhs);
 			T&	operator[](int n);
-
+			
 			int	size() const;
 };
 
