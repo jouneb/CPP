@@ -6,7 +6,7 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 14:57:43 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/11/24 19:14:26 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/11/25 15:28:29 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,20 +73,19 @@ void    Span::addNumber(int nb)
 int Span::shortestSpan()
 {
     int diff;
-    for (std::vector<int>::const_iterator i = _vector.begin(); i != _vector.end(); ++i)
-        std::cout << *i << ' ';
     if (this->_count <= 1)
         throw   NotenoughException();
     sort(this->_vector.begin(), _vector.end());
+    // for (std::vector<int>::const_iterator i = _vector.begin(); i != _vector.end(); ++i)
+    //     std::cout << *i << ' ';
     diff = _vector[1]-_vector[0];
     for (unsigned int i = 2; i < _count; i++)
     {
-        std::cout<< "diff = " << _vector[i] - _vector[i - 1] << std::endl;
         if (diff > (_vector[i] - _vector[i - 1]))
-            diff = _vector[i] - _vector[i-1];
+            diff = _vector[i] - _vector[i-1];        
     }
-    std::cout<<"La distance min entre deux nombres est : " << diff << std::endl;
-    return(_vector[1]-_vector[0]);
+    std::cout<<"La distance min entre deux nombres est : " ;
+    return(diff);
 }
 
 int Span::longestSpan()
@@ -97,9 +96,7 @@ int Span::longestSpan()
     if(this->_count <= 1)
         throw NotenoughException();
     min = *std::min_element(_vector.begin(), _vector.end());
-    std::cout<<"min = "<< min <<std::endl;
     max = *std::max_element(_vector.begin(), _vector.end());
-    std::cout<<"max = "<< max <<std::endl;
-    std::cout<<"La distance max entre deux nombres est : " << max - min << std::endl;
+    std::cout<<"La distance max entre deux nombres est : " ;
     return(max - min);
 }

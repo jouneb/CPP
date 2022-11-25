@@ -6,7 +6,7 @@
 /*   By: jbouyer <jbouyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 14:44:17 by jbouyer           #+#    #+#             */
-/*   Updated: 2022/11/24 18:39:03 by jbouyer          ###   ########.fr       */
+/*   Updated: 2022/11/25 14:58:39 by jbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,17 @@ class Span
                         return("Impossible, not enough numbers.");
                 }
    };
-          
 
+   void addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end, int nb)
+   {
+        for (int i = 0; i < nb; i++)
+        {
+                while(begin != end)
+                {
+                        addNumber(*begin);
+                        begin++;
+                }
+        }
+   }
+  
 };
